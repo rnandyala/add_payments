@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    tools:context=".PaymentDetailsDialog">
+
+    <TextView
+        android:id="@+id/mPayment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Add Payment"
+        android:layout_marginStart="4dp"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/amount_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="\u20B9"
+        android:layout_marginStart="4dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@id/spinner_guideline"
+        app:layout_constraintEnd_toStartOf="@id/enter_amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mPayment_title" />
+
+    <EditText
+        android:id="@+id/enter_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="enter amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/spinner_guideline"
+        app:layout_constraintStart_toEndOf="@+id/amount_label"
+        app:layout_constraintTop_toBottomOf="@id/mPayment_title" />
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/spinner_guideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"/>
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/mChoosetrans"
+        style="@style/spinner_style"
+        android:layout_width="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_guideline" />
+
+    <EditText
+        android:id="@+id/provider"
+        style="@style/spinner_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Provider(ICIC, Citibank, etc.)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mChoosetrans" />
+
+
+    <EditText
+        android:id="@+id/transaction"
+        style="@style/spinner_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:hint="Transaction reference"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/provider" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/payment_guideline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@android:color/holo_blue_light"
+        android:text="OK"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payment_guideline" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@android:color/white"
+        android:text="CANCEL"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintEnd_toStartOf="@id/mOk"
+        app:layout_constraintTop_toBottomOf="@id/payment_guideline" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
